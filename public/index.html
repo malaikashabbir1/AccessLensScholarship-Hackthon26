@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AccessLens helps students compare their academic profiles with scholarship eligibility requirements.">
+  <title>AccessLens | Find Your Scholarship Fit</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <span class="brand-icon">A</span>
+      <span>Access<span class="brand-light">Lens</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="profile.html">Student Profile</a>
+      <a href="analyze.html">Analyze Scholarship</a>
+    </nav>
+
+    <a href="profile.html" class="nav-cta">Get Started <span>↗</span></a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          AI-POWERED SCHOLARSHIP MATCHING
+        </div>
+
+        <h1>
+          Your future deserves
+          <span>the right opportunity.</span>
+        </h1>
+
+        <p class="hero-description">
+          Every scholarship has different requirements.
+          AccessLens compares your student profile with scholarship
+          criteria to help you understand where you may qualify
+          and what you still need.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="profile.html" class="btn btn-primary">
+            Create Your Profile <span>→</span>
+          </a>
+          <a href="#how-it-works" class="btn btn-outline">
+            Explore How It Works
+          </a>
+        </div>
+
+        <div class="hero-note">
+          <span class="check-icon">✓</span>
+          Save your profile once. Analyze multiple scholarships.
+        </div>
+      </div>
+
+      <!-- Sample dashboard preview -->
+      <div class="hero-visual">
+        <div class="visual-glow"></div>
+
+        <div class="dashboard-card">
+          <div class="dashboard-header">
+            <div>
+              <p class="muted-label">YOUR SCHOLARSHIP CHECK</p>
+              <h3>Profile overview</h3>
+            </div>
+            <span class="live-badge">
+              <span class="status-dot"></span>
+              AI Preview
+            </span>
+          </div>
+
+          <div class="match-preview">
+            <div class="match-ring">
+              <div>
+                <strong>92%</strong>
+                <small>Illustrative</small>
+              </div>
+            </div>
+
+            <div class="match-copy">
+              <span class="mini-label">SAMPLE RESULT</span>
+              <h3>Strong potential match</h3>
+              <p>
+                A sample of how your academic profile
+                could be compared with scholarship criteria.
+              </p>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="criteria-heading">EXAMPLE CRITERIA</p>
+
+          <div class="criteria-row">
+            <span class="criteria-icon">✓</span>
+            <span>Academic background</span>
+            <span class="criteria-tag">Matches</span>
+          </div>
+
+          <div class="criteria-row">
+            <span class="criteria-icon">✓</span>
+            <span>Study level</span>
+            <span class="criteria-tag">Matches</span>
+          </div>
+
+          <div class="criteria-row">
+            <span class="criteria-icon question">?</span>
+            <span>English proficiency</span>
+            <span class="criteria-tag pending">Verify</span>
+          </div>
+
+          <div class="dashboard-footer">
+            <span class="sparkle">✦</span>
+            AI-assisted eligibility insights
+          </div>
+        </div>
+
+        <div class="floating-card floating-top">
+          <span class="floating-icon blue-icon">✦</span>
+          <div>
+            <strong>Personalized</strong>
+            <small>Profile-based analysis</small>
+          </div>
+        </div>
+
+        <div class="floating-card floating-bottom">
+          <span class="floating-icon green-icon">✓</span>
+          <div>
+            <strong>Clear requirements</strong>
+            <small>Understand potential gaps</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits strip -->
+    <section class="benefits">
+      <div class="benefit">
+        <span class="benefit-symbol">01</span>
+        <div>
+          <strong>Your profile, saved</strong>
+          <p>Reuse your details for each analysis</p>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <span class="benefit-symbol">02</span>
+        <div>
+          <strong>Requirement comparison</strong>
+          <p>Compare your details with scholarship rules</p>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <span class="benefit-symbol">03</span>
+        <div>
+          <strong>Actionable insights</strong>
+          <p>See matches, gaps, and unknowns</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section how-section" id="how-it-works">
+      <div class="section-heading">
+        <span class="section-kicker">SIMPLE BY DESIGN</span>
+        <h2>From searching to <span>understanding.</span></h2>
+        <p>Three simple steps to make scholarship requirements clearer.</p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <div class="step-top">
+            <span class="step-icon purple">♙</span>
+            <span class="step-count">STEP 01</span>
+          </div>
+          <h3>Build your profile</h3>
+          <p>
+            Add your nationality, academic qualifications,
+            grades, study interests, and relevant experience.
+          </p>
+          <a href="profile.html" class="text-link">
+            Create profile <span>→</span>
+          </a>
+        </article>
+
+        <article class="step-card">
+          <div class="step-top">
+            <span class="step-icon blue">⌕</span>
+            <span class="step-count">STEP 02</span>
+          </div>
+          <h3>Analyze a scholarship</h3>
+          <p>
+            Paste the scholarship description and let AI
+            compare its stated criteria with your profile.
+          </p>
+          <a href="analyze.html" class="text-link">
+            Start analysis <span>→</span>
+          </a>
+        </article>
+
+        <article class="step-card">
+          <div class="step-top">
+            <span class="step-icon green">✧</span>
+            <span class="step-count">STEP 03</span>
+          </div>
+          <h3>Understand your fit</h3>
+          <p>
+            Review potential matches, unmet conditions,
+            and information you need to verify.
+          </p>
+          <a href="analyze.html" class="text-link">
+            Explore analysis <span>→</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Scholarship pathways carousel -->
+    <section class="section pathways-section">
+      <div class="pathways-heading">
+        <div class="section-heading align-left">
+          <span class="section-kicker">EXPLORE YOUR OPTIONS</span>
+          <h2>Where could your <span>future take you?</span></h2>
+          <p>Explore common scholarship pathways and analyze opportunities that interest you.</p>
+        </div>
+
+        <div class="carousel-controls">
+          <button type="button" id="carouselPrev"
+            aria-label="Previous pathways">←</button>
+          <button type="button" id="carouselNext"
+            aria-label="Next pathways">→</button>
+        </div>
+      </div>
+
+      <div class="carousel-viewport" id="carouselViewport">
+        <div class="carousel-track" id="carouselTrack">
+
+          <article class="pathway-card pathway-ai">
+            <div class="pathway-art art-ai" aria-hidden="true">
+              <span class="art-orbit orbit-one"></span>
+              <span class="art-orbit orbit-two"></span>
+              <span class="art-core">AI</span>
+              <span class="art-star">✦</span>
+            </div>
+            <div class="pathway-content">
+              <span class="pathway-label">TECHNOLOGY</span>
+              <h3>AI & Data Science</h3>
+              <p>Explore funding for artificial intelligence, machine learning, and data-focused degrees.</p>
+              <a href="analyze.html" class="text-link">
+                Check a scholarship <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="pathway-card pathway-masters">
+            <div class="pathway-art art-masters" aria-hidden="true">
+              <span class="art-sun"></span>
+              <span class="art-book">▤</span>
+              <span class="art-lines">✦　✦</span>
+            </div>
+            <div class="pathway-content">
+              <span class="pathway-label">POSTGRADUATE STUDY</span>
+              <h3>Fully Funded Master's</h3>
+              <p>Review tuition coverage, living allowances, and other funding conditions.</p>
+              <a href="analyze.html" class="text-link">
+                Check a scholarship <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="pathway-card pathway-global">
+            <div class="pathway-art art-global" aria-hidden="true">
+              <span class="globe-ring"></span>
+              <span class="globe">◎</span>
+              <span class="globe-star">✧</span>
+            </div>
+            <div class="pathway-content">
+              <span class="pathway-label">INTERNATIONAL EDUCATION</span>
+              <h3>Study Abroad</h3>
+              <p>Compare eligibility requirements for opportunities in your preferred countries.</p>
+              <a href="analyze.html" class="text-link">
+                Check a scholarship <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="pathway-card pathway-research">
+            <div class="pathway-art art-research" aria-hidden="true">
+              <span class="research-circle">✧</span>
+              <span class="research-star">✳</span>
+              <span class="research-dots">· · ·</span>
+            </div>
+            <div class="pathway-content">
+              <span class="pathway-label">RESEARCH</span>
+              <h3>Research Funding</h3>
+              <p>Inspect research experience, degree prerequisites, and other selection criteria.</p>
+              <a href="analyze.html" class="text-link">
+                Check a scholarship <span>→</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="carousel-pagination" id="carouselPagination"
+        aria-label="Choose pathway slide"></div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="cta-section">
+      <div class="cta-decoration cta-decoration-one"></div>
+      <div class="cta-decoration cta-decoration-two"></div>
+
+      <div class="cta-content">
+        <span class="section-kicker">YOUR NEXT CHAPTER STARTS HERE</span>
+        <h2>Make your next scholarship search more informed.</h2>
+        <p>
+          Create your profile once and use it to explore
+          multiple scholarship opportunities.
+        </p>
+        <a href="profile.html" class="btn btn-white">
+          Get Started for Free <span>→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <a href="index.html" class="brand">
+      <span class="brand-icon">A</span>
+      <span>Access<span class="brand-light">Lens</span></span>
+    </a>
+
+    <p>Helping students understand scholarship eligibility.</p>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="profile.html">Student Profile</a>
+      <a href="analyze.html">Analyze Scholarship</a>
+    </div>
+
+    <p class="copyright">
+      © <span id="currentYear"></span> AccessLens. AI-assisted
+      analysis is informational and does not guarantee eligibility.
+    </p>
+  </footer>
+
+</body>
+</html>

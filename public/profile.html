@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Create your AccessLens student profile to evaluate scholarship eligibility."
+  >
+  <title>Student Profile | AccessLens</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="profile.css">
+  <script src="profile.js" defer></script>
+</head>
+
+<body class="profile-page">
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <span class="brand-icon">A</span>
+      <span>Access<span class="brand-light">Lens</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="profile.html" class="active">Student Profile</a>
+      <a href="analyze.html">Analyze Scholarship</a>
+    </nav>
+
+    <a href="analyze.html" class="nav-cta">
+      Analyze Scholarship <span>→</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+  </header>
+
+  <main class="profile-main">
+
+    <!-- Page heading -->
+    <section class="profile-intro">
+      <div class="profile-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Student Profile</span>
+      </div>
+
+      <span class="section-kicker">YOUR SCHOLARSHIP JOURNEY</span>
+
+      <h1>Let's build your <span>student profile.</span></h1>
+
+      <p>
+        Share your academic background and study goals. AccessLens
+        will use these details to compare your profile with the
+        requirements of each scholarship you want to explore.
+      </p>
+
+      <div class="profile-benefits">
+        <span><span class="benefit-check">✓</span> Save once</span>
+        <span><span class="benefit-check">✓</span> Reuse anytime</span>
+        <span><span class="benefit-check">✓</span> Edit when needed</span>
+      </div>
+    </section>
+
+    <!-- Progress -->
+    <section class="profile-progress" aria-label="Profile completion">
+      <div class="progress-copy">
+        <div>
+          <strong>Student profile</strong>
+          <p id="progressMessage">Complete the required fields to continue.</p>
+        </div>
+
+        <span class="progress-percent" id="progressPercent">0%</span>
+      </div>
+
+      <div
+        class="progress-track"
+        role="progressbar"
+        aria-label="Required profile fields completed"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+        id="progressBar"
+      >
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </section>
+
+    <!-- Existing profile notice -->
+    <div class="saved-notice" id="savedNotice" hidden>
+      <span class="saved-notice-icon">✓</span>
+
+      <div>
+        <strong>Your profile is already saved.</strong>
+        <p>
+          Your existing details have been loaded. Update them if needed,
+          or continue directly to scholarship analysis.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        id="editProfileButton"
+        class="small-outline-button"
+      >
+        Edit profile
+      </button>
+    </div>
+
+    <!-- Profile form -->
+    <form id="studentProfileForm" class="profile-form">
+
+      <!-- Section 1: Personal information -->
+      <section class="form-section">
+        <div class="form-section-heading">
+          <div class="section-icon icon-purple">01</div>
+
+          <div>
+            <h2>Personal information</h2>
+            <p>Basic details that may affect scholarship eligibility.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="fullName">Full name <span>*</span></label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              autocomplete="name"
+              placeholder="Enter your full name"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+            >
+            <small>Optional for this demo; no account is created.</small>
+          </div>
+
+          <div class="form-field">
+            <label for="nationality">Nationality / citizenship <span>*</span></label>
+            <input
+              type="text"
+              id="nationality"
+              name="nationality"
+              placeholder="e.g. Pakistani"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="residenceCountry">Current country of residence <span>*</span></label>
+            <input
+              type="text"
+              id="residenceCountry"
+              name="residenceCountry"
+              placeholder="e.g. Pakistan"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="dateOfBirth">Date of birth</label>
+            <input
+              type="date"
+              id="dateOfBirth"
+              name="dateOfBirth"
+            >
+            <small>Some scholarships have age restrictions.</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Academic background -->
+      <section class="form-section">
+        <div class="form-section-heading">
+          <div class="section-icon icon-blue">02</div>
+
+          <div>
+            <h2>Academic background</h2>
+            <p>Tell us about your most recent completed qualification.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="qualification">Highest completed qualification <span>*</span></label>
+            <select id="qualification" name="qualification" required>
+              <option value="">Select qualification</option>
+              <option value="High School">High School / Intermediate</option>
+              <option value="Diploma">Diploma</option>
+              <option value="Bachelor's">Bachelor's degree</option>
+              <option value="Master's">Master's degree</option>
+              <option value="MPhil">MPhil / MS</option>
+              <option value="PhD">PhD</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="degreeTitle">Degree / qualification title <span>*</span></label>
+            <input
+              type="text"
+              id="degreeTitle"
+              name="degreeTitle"
+              placeholder="e.g. BS Software Engineering"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="fieldOfStudy">Major / field of study <span>*</span></label>
+            <input
+              type="text"
+              id="fieldOfStudy"
+              name="fieldOfStudy"
+              placeholder="e.g. Software Engineering"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="institution">University / institution <span>*</span></label>
+            <input
+              type="text"
+              id="institution"
+              name="institution"
+              placeholder="Enter institution name"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="gradingSystem">Grading system <span>*</span></label>
+            <select id="gradingSystem" name="gradingSystem" required>
+              <option value="">Select grading system</option>
+              <option value="CGPA_4">CGPA out of 4.0</option>
+              <option value="CGPA_5">CGPA out of 5.0</option>
+              <option value="Percentage">Percentage</option>
+              <option value="GPA_10">GPA out of 10</option>
+              <option value="Other">Other grading system</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="academicScore">CGPA / percentage <span>*</span></label>
+            <input
+              type="number"
+              id="academicScore"
+              name="academicScore"
+              placeholder="e.g. 3.55"
+              min="0"
+              step="any"
+              required
+            >
+            <small id="scoreHint">Choose your grading system first.</small>
+          </div>
+
+          <div class="form-field">
+            <label for="graduationYear">Graduation year</label>
+            <input
+              type="number"
+              id="graduationYear"
+              name="graduationYear"
+              min="1950"
+              max="2100"
+              placeholder="e.g. 2026"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="currentStatus">Current academic status <span>*</span></label>
+            <select id="currentStatus" name="currentStatus" required>
+              <option value="">Select status</option>
+              <option value="Currently studying">Currently studying</option>
+              <option value="Recently graduated">Recently graduated</option>
+              <option value="Working">Working</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Study goals -->
+      <section class="form-section">
+        <div class="form-section-heading">
+          <div class="section-icon icon-green">03</div>
+
+          <div>
+            <h2>Your study goals</h2>
+            <p>Choose the kind of opportunity you want to pursue next.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="intendedDegree">Degree you want to pursue <span>*</span></label>
+            <select id="intendedDegree" name="intendedDegree" required>
+              <option value="">Select intended degree</option>
+              <option value="Bachelor's">Bachelor's</option>
+              <option value="Master's">Master's</option>
+              <option value="MS">MS</option>
+              <option value="MPhil">MPhil</option>
+              <option value="PhD">PhD</option>
+              <option value="Diploma">Diploma / certificate</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="preferredIntake">Preferred intake</label>
+            <select id="preferredIntake" name="preferredIntake">
+              <option value="">Select intake</option>
+              <option value="Spring 2027">Spring 2027</option>
+              <option value="Fall 2027">Fall 2027</option>
+              <option value="Spring 2028">Spring 2028</option>
+              <option value="Fall 2028">Fall 2028</option>
+              <option value="Flexible">Flexible / not decided</option>
+            </select>
+          </div>
+
+          <div class="form-field full-width">
+            <label for="preferredCountries">Preferred study countries <span>*</span></label>
+            <select
+              id="preferredCountries"
+              name="preferredCountries"
+              multiple
+              size="5"
+              required
+              aria-describedby="countryHelp"
+            >
+              <option value="Ireland">Ireland</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United States">United States</option>
+              <option value="Canada">Canada</option>
+              <option value="Germany">Germany</option>
+              <option value="Italy">Italy</option>
+              <option value="Australia">Australia</option>
+              <option value="China">China</option>
+              <option value="Japan">Japan</option>
+              <option value="Other">Other / not listed</option>
+            </select>
+            <small id="countryHelp">
+              Hold Ctrl on Windows or Command on Mac to select multiple countries.
+            </small>
+          </div>
+
+          <div class="form-field full-width">
+            <label for="preferredFields">Preferred fields of study <span>*</span></label>
+            <input
+              type="text"
+              id="preferredFields"
+              name="preferredFields"
+              placeholder="e.g. Artificial Intelligence, Data Science, Computer Science"
+              required
+            >
+            <small>Separate multiple fields with commas.</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Funding and qualifications -->
+      <section class="form-section">
+        <div class="form-section-heading">
+          <div class="section-icon icon-orange">04</div>
+
+          <div>
+            <h2>Funding and qualifications</h2>
+            <p>Additional details that may affect specific scholarships.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="fundingPreference">Funding preference <span>*</span></label>
+            <select
+              id="fundingPreference"
+              name="fundingPreference"
+              required
+            >
+              <option value="">Select funding preference</option>
+              <option value="Fully funded">Fully funded</option>
+              <option value="Partially funded">Partially funded</option>
+              <option value="Either">Fully or partially funded</option>
+              <option value="Self funded">Self-funded opportunities too</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="englishTest">English proficiency test (optional)</label>
+            <select id="englishTest" name="englishTest">
+              <option value="">Not taken / Not specified</option>
+              <option value="IELTS">IELTS</option>
+              <option value="TOEFL">TOEFL</option>
+              <option value="Duolingo English Test">Duolingo English Test</option>
+              <option value="PTE">PTE Academic</option>
+              <option value="Other">Other</option>
+              <option value="Waiver">Exemption / waiver</option>
+            </select>
+            <small>
+              Select a test only if you have taken it or have an applicable
+              exemption. You can leave this field blank.
+            </small>
+          </div>
+
+          <div class="form-field">
+            <label for="englishScore">English test score (optional)</label>
+            <input
+              type="text"
+              id="englishScore"
+              name="englishScore"
+              placeholder="e.g. 120 or 6.5"
+            >
+            <small>
+              Enter your score if you have taken a test. Otherwise, leave it blank.
+            </small>
+          </div>
+
+          <div class="form-field">
+            <label for="experienceYears">Relevant experience (years)</label>
+            <input
+              type="number"
+              id="experienceYears"
+              name="experienceYears"
+              min="0"
+              max="60"
+              step="0.5"
+              placeholder="e.g. 1"
+            >
+          </div>
+
+          <div class="form-field full-width">
+            <label for="additionalQualifications">
+              Additional qualifications or achievements
+            </label>
+            <textarea
+              id="additionalQualifications"
+              name="additionalQualifications"
+              rows="4"
+              maxlength="1500"
+              placeholder="Optional: research, projects, publications, awards, professional experience, or other relevant details."
+            ></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- Form messages -->
+      <div
+        class="form-message"
+        id="formMessage"
+        role="status"
+        aria-live="polite"
+      ></div>
+
+      <!-- Actions -->
+      <div class="form-actions">
+        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+
+        <div class="form-actions-right">
+          <button
+            type="button"
+            class="btn btn-danger"
+            id="clearProfileButton"
+            hidden
+          >
+            Clear Profile
+          </button>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            id="saveProfileButton"
+          >
+            Save Student Profile <span>→</span>
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+    <!-- Continue after saving -->
+    <section class="continue-card" id="continueCard" hidden>
+      <div class="continue-icon">✓</div>
+
+      <div class="continue-copy">
+        <h2>Your profile is ready.</h2>
+        <p>
+          Your details are saved in this browser. You can reuse them
+          for future scholarship analyses.
+        </p>
+      </div>
+
+      <a href="analyze.html" class="btn btn-primary">
+        Analyze a Scholarship <span>→</span>
+      </a>
+    </section>
+
+    <p class="privacy-note">
+      <span>🔒</span>
+      Demo privacy notice: your profile is stored in this browser using
+      localStorage. It is not uploaded to a student account or shared
+      with the AI until you submit a scholarship analysis.
+    </p>
+
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="brand">
+      <span class="brand-icon">A</span>
+      <span>Access<span class="brand-light">Lens</span></span>
+    </a>
+
+    <p>Helping students understand scholarship eligibility.</p>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="profile.html">Student Profile</a>
+      <a href="analyze.html">Analyze Scholarship</a>
+    </div>
+
+    <p class="copyright">
+      © <span id="currentYear"></span> AccessLens.
+      AI-assisted analysis does not guarantee eligibility.
+    </p>
+  </footer>
+
+</body>
+</html>

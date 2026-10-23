@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Analyze your eligibility for scholarships with AccessLens.">
+  <title>Analyze Scholarship | AccessLens</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="analyze.css">
+  <script src="analyze.js" defer></script>
+</head>
+
+<body>
+  <header class="al-header">
+    <a class="al-brand" href="index.html">
+      <span class="al-brand-mark">A</span>
+      <span>AccessLens</span>
+    </a>
+
+    <nav class="al-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="profile.html">Student Profile</a>
+      <a href="analyze.html" class="active">Analyze Scholarship</a>
+    </nav>
+  </header>
+
+  <main class="al-main">
+    <section class="al-page-intro">
+      <span class="al-eyebrow">SMART SCHOLARSHIP MATCHING</span>
+      <h1>Find out where you stand.</h1>
+      <p>
+        Compare your academic profile with scholarship requirements.
+        Discover potential matches, eligibility gaps, and your next steps.
+      </p>
+    </section>
+
+    <!-- Student profile summary -->
+    <section class="al-profile-banner" aria-labelledby="profileTitle">
+      <div class="al-profile-icon" aria-hidden="true">♙</div>
+      <div class="al-profile-info">
+        <h2 id="profileTitle">Your student profile</h2>
+        <p id="profileSummary">Checking your saved profile...</p>
+      </div>
+      <a href="profile.html" class="al-secondary-link">Edit profile ↗</a>
+    </section>
+
+    <div id="profileError" class="al-alert al-alert-error" role="alert" hidden>
+      <strong>Student profile needed</strong>
+      <p>Please complete your student profile before analyzing a scholarship.</p>
+      <a href="profile.html" class="al-button al-button-primary">Complete profile</a>
+    </div>
+
+    <!-- Scholarship input -->
+    <section class="al-panel al-input-panel" aria-labelledby="formTitle">
+      <div class="al-section-heading">
+        <span class="al-step">01</span>
+        <div>
+          <h2 id="formTitle">Scholarship details</h2>
+          <p>Paste the official scholarship description or eligibility criteria below.</p>
+        </div>
+      </div>
+
+      <form id="analyzeForm">
+        <div class="al-field">
+          <label for="scholarshipName">Scholarship name <span class="al-optional">(optional)</span></label>
+          <input
+            id="scholarshipName"
+            name="scholarshipName"
+            type="text"
+            maxlength="150"
+            placeholder="e.g. International Master's Scholarship"
+          >
+        </div>
+
+        <div class="al-field">
+          <div class="al-label-row">
+            <label for="scholarshipText">Scholarship requirements <span class="al-required">*</span></label>
+            <span id="scholarshipCount" class="al-character-count">0 / 15,000</span>
+          </div>
+
+          <textarea
+            id="scholarshipText"
+            name="scholarshipText"
+            rows="9"
+            minlength="50"
+            maxlength="15000"
+            required
+            placeholder="Paste the scholarship's official eligibility criteria, eligible countries, academic requirements, language requirements, funding details, and deadline..."
+          ></textarea>
+
+          <p class="al-field-hint">
+            Tip: Include the official eligibility criteria and application conditions for a more reliable assessment.
+          </p>
+          <p id="scholarshipError" class="al-field-error" hidden></p>
+        </div>
+
+        <div class="al-privacy-note">
+          <span aria-hidden="true">🔒</span>
+          <p>Your saved profile is used to compare your information with the scholarship criteria.</p>
+        </div>
+
+        <div class="al-form-actions">
+          <button id="analyzeButton" class="al-button al-button-primary" type="submit">
+            <span aria-hidden="true">✦</span>
+            Analyze my eligibility
+          </button>
+          <p id="formStatus" class="al-form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+
+    <!-- Results appear here on the same page -->
+    <section id="resultsSection" class="al-results" aria-labelledby="resultsTitle" hidden>
+      <div class="al-results-heading">
+        <div>
+          <span class="al-eyebrow">YOUR PERSONALIZED REPORT</span>
+          <h2 id="resultsTitle">Scholarship assessment</h2>
+          <p id="resultIntro">Here is how your profile compares with the stated requirements.</p>
+        </div>
+        <button id="analyzeAgainButton" class="al-button al-button-outline" type="button">
+          Analyze another
+        </button>
+      </div>
+
+      <div id="analysisResults" class="al-results-content" aria-live="polite"></div>
+
+      <p class="al-disclaimer">
+        <strong>Important:</strong> This is an AI-assisted preliminary assessment, not an official
+        scholarship decision. Verify all criteria and deadlines with the scholarship provider.
+      </p>
+    </section>
+
+    <footer class="al-footer">
+      <p>AccessLens · Make informed scholarship decisions.</p>
+    </footer>
+  </main>
+</body>
+</html>
